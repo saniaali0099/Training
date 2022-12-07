@@ -1,0 +1,13 @@
+class Solution:
+     def sortColors(self, arr: List[int]) -> None:
+         low,curr,high=0,0,len(arr)-1
+         while curr<=high:
+             if arr[curr]==1:
+               curr+=1
+             elif arr[curr]==0:
+               arr[curr],arr[low]=arr[low],arr[curr]
+               curr+=1
+               low+=1
+             elif arr[curr]==2:
+               arr[curr],arr[high]=arr[high],arr[curr]
+               high-=1
